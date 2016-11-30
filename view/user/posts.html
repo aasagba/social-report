@@ -1,0 +1,16 @@
+{{#content "title"}}{{channel}}{{/content}}
+<p>{{channel}} posts - <b>{{count}}</b></p>
+
+{{#each posts}}
+<div class="post-container">
+    {{{text}}}
+</div>
+{{/each}}
+
+<style>
+    .post-container {
+        display: inline-block;
+        margin: 5px;
+        border: solid 1px lightgray;
+    }
+</style>

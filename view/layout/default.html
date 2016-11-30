@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{block "title"}}</title>
+    <meta name="description" content="{{block "description"}}"/>
+
+    <!-- For mobile devices. -->
+    <meta name="viewport" content="width=device-width"/>
+
+</head>
+<!--[if IE 7]><body class="ie7"><![endif]-->
+<!--[if IE 8]><body class="ie8"><![endif]-->
+<!--[if IE 9]><body class="ie9"><![endif]-->
+<!--[if !IE]>-->
+<body>
+    {{> page-header}}
+
+    {{{body}}}
+</body>
+</html>

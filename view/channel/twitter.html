@@ -1,0 +1,84 @@
+{{#content "title"}}Twitter{{/content}}
+<p>Users - <b>{{count}}</b></p>
+
+<table id="" name="" class="">
+    <thead>
+        <tr>
+            <th>Site</th>
+            <th>Location</th>
+            <th>Followers</th>
+            <th>Friends</th>
+            <th>Favourites</th>
+            <th>Posts</th>
+            <th>Latest Post Date</th>
+            <th>Latest Post</th>
+        </tr>
+    </thead>
+    <tbody>
+    {{#each users}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{location}}</td>
+            <td>{{followers_count}}</td>
+            <td>{{friends_count}}</td>
+            <td>{{favourites_count}}</td>
+            <td>{{statuses_count}}</td>
+            <td>{{status.created_at}}</td>
+            <td>{{status.text}}</td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>
+
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        padding:5px;
+    }
+    .user-panel {
+        width: 550px;
+        display: inline-block;
+    }
+    ul li {
+        list-style:none;
+
+    }
+    .name {
+        font-weight: bold;
+
+    }
+    .latest-post {
+        padding: 0;
+        width: 500px;
+    }
+    .latest-post li {
+        border: 1px solid lightgray;
+        padding: 10px;
+    }
+</style>
+
+<!--
+<div>
+    {{#each users}}
+    <div class="user-panel">
+        <ul>
+            <li class="name">{{name}}</li>
+            <li>Location: {{location}}</li>
+            <li>Followers: {{followers_count}}</li>
+            <li>Friends: {{friends_count}}</li>
+            <li>Favourites: {{favourites_count}}</li>
+            <li>Posts: {{statuses_count}}</li>
+            <li>Latest Post:
+                <ul class="latest-post">
+                    <li>{{status.text}}</li>
+                </ul>
+            </li>
+            <li>Latest Post Date: {{status.created_at}}</li>
+        </ul>
+    </div>
+    {{/each}}
+</div>-->

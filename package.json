@@ -1,0 +1,23 @@
+{
+  "name": "lfi-social",
+  "version": "1.0.0",
+  "description": "LFI Social Media Integration Platform",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adrian Asagba (aasagba@gmail.com)",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.1.4",
+    "bluebird": "^3.4.6",
+    "body-parser": "^1.15.2",
+    "chalk": "^1.1.3",
+    "compression": "^1.6.2",
+    "express": "^3.4.8",
+    "express-hbs": "^0.2.2",
+    "mongojs": "^2.4.0",
+    "request": "^2.79.0",
+    "twitter": "^1.4.0"
+  }
+}
