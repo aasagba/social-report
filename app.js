@@ -10,14 +10,24 @@ var hbs = require('express-hbs');
 var compression = require('compression');
 var chalk = require('chalk');
 var bodyParser = require('body-parser');
+var createClient = require('./socialreport-client/client');
+
+module.exports = initApp;
 
 // Initialise the application
-function initApp (callback) {
+function initApp (config, callback) {
+
+    var webserviceUrl = config.webservice;
+    if (typeof webserviceUrl == 'object') {
+        //webserviceUrl = 'http://127.0.0.1:3000/';
+        webserviceUrl = 'http://' + webserviceUrl.host + ':' + webserviceUrl.port + '/';
+    }
 
     var app = new EventEmitter();
     app.address = null;
     app.express = express();
     app.server = http.createServer(app.express);
+    app.webservice = createClient(webserviceUrl);
 
     // Compression
     app.express.use(compression());
@@ -68,6 +78,7 @@ function initApp (callback) {
 
         res.status(500);
         res.render('500');
+        exit();
     });
 
     app.server.listen(process.env.PORT || 7000, function (err) {
@@ -77,19 +88,11 @@ function initApp (callback) {
     });
 }
 
-initApp(function(err, app) {
-    console.log(chalk.underline.magenta("LFI Social started"));
-    console.log(chalk.grey("mode: %s"), process.env.NODE_ENV);
-    console.log(chalk.grey("uri: %s"), app.address);
-
-    app.on('route-error', function (err) {
-        var stack = (err.stack ? err.stack.split('\n') : [err.message]);
-        var msg = chalk.red(stack.shift());
-        console.error('');
-        console.error(msg);
-        console.error(chalk.grey(stack.join('\n')));
-    });
-});
+var exit = function exit () {
+    setTimeout(function () {
+        process.exit(1);
+    }, 0);
+};
 
 /* Error Handling
 

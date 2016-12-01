@@ -1,0 +1,9 @@
+{
+  "port": 7000,
+
+  "webservice": {
+    "database": "mongodb://localhost/",
+    "host": "127.0.0.1",
+    "port": 8000
+  }
+}

@@ -12,10 +12,23 @@ function route (app) {
     app.express.get('/channel/:channel/:user', function (req, res, next) {
         console.log("in /channel/:channel/:user");
         var channel = req.params.channel.toLowerCase();
+        var user = req.params.channel.toLowerCase();
         var options = {screen_name: 'BSI_UK', count:200};
         var action = "statuses/user_timeline";
+
+        app.webservice.posts(user).get({client: user}, function (err, posts) {
+            console.log("posts from webservice: ");
+            console.log(JSON.stringify(posts));
+
+            res.render('user/posts', {
+                count: posts.length,
+                posts: posts,
+                channel: channel
+            });
+        });
+
         //twitterClient.twitterStatusesAsync(action, options).then(twitterClient.getMaxHistory);
-        twitterClient.getPostTimeline(action, options).then(function (posts) {
+        /*twitterClient.getPostTimeline(action, options).then(function (posts) {
             console.log("resolved postTimeline");
             console.log(posts.length);
 
@@ -24,7 +37,7 @@ function route (app) {
                 posts: posts,
                 channel: channel
             });
-        });
+        });*/
     });
 
 
@@ -34,7 +47,20 @@ function route (app) {
         console.log("in /channel/" + channel);
 
         var userInfo = [];
+        var user = "BSI";
 
+        app.webservice.users.get({client: user}, function (err, user) {
+            console.log("user from webservice: ");
+            //console.log(JSON.stringify(user));
+
+            res.render('user/user', {
+                count: user.length,
+                users: user,
+                channel: channel
+            });
+        });
+
+        /*
         switch (channel) {
             case "twitter":
                 // get users, hardcode for now
@@ -61,8 +87,9 @@ function route (app) {
                 users: userInfo,
                 channel: channel
             });
-        });
+        });*/
     });
+
 }
 
 /*
