@@ -9,16 +9,19 @@ var twitterClient = createTwitterClient();
 function route (app) {
 
     // Get Post Timeline
-    app.express.get('/channel/:channel/:user', function (req, res, next) {
-        console.log("in /channel/:channel/:user");
+    app.express.get('/channel/:channel/account/:account', function (req, res, next) {
+        console.log("in /channel/:channel/account/:account");
         var channel = req.params.channel.toLowerCase();
-        var user = req.params.channel.toLowerCase();
+        var account = req.params.account.trim().toUpperCase();
+        account = account.replace(/ /g,"_");
         var options = {screen_name: 'BSI_UK', count:200};
         var action = "statuses/user_timeline";
+        console.log("account: " + account);
+        console.log("Channel: " + channel);
 
-        app.webservice.posts(user).get({client: user}, function (err, posts) {
+        app.webservice.posts(account).get({channel: channel, client: account}, function (err, posts) {
             console.log("posts from webservice: ");
-            console.log(JSON.stringify(posts));
+            console.log(posts.length);
 
             res.render('user/posts', {
                 count: posts.length,
@@ -42,23 +45,45 @@ function route (app) {
 
 
     // Get User Lookup
-    app.express.get('/channel/:channel', function (req, res, next) {
+    app.express.get('/channel/:channel/client/:client', function (req, res, next) {
         var channel = req.params.channel.toLowerCase();
-        console.log("in /channel/" + channel);
+        var client = req.params.client.toLowerCase();
+        console.log("channel: " + channel);
+        console.log("client: " + client);
 
         var userInfo = [];
         var user = "BSI";
 
-        app.webservice.users.get({client: user}, function (err, user) {
-            console.log("user from webservice: ");
-            //console.log(JSON.stringify(user));
+        // gets user accounts from users collection
+        /*app.webservice.users.get({client: user, channel: channel}, function (err, user) {
+            console.log("users from webservice: ");
+            console.log(user.length);
+
+
+            //app.webservice.user()
 
             res.render('user/user', {
                 count: user.length,
                 users: user,
                 channel: channel
             });
+        });*/
+
+        // NEED TO WRITE CODE TO HIT /USER/RUN TO POPULATE SOCIAL METRICS
+
+        // NEED TO WRITE CODE TO GET USER LOOKUP VIA /USER/RESULTS
+        app.webservice.user.get({client: client, channel: channel}, function (err, users) {
+            console.log("Got " + users.length + " Users from Webservice for the " + channel + " channel.");
+
+            console.log(JSON.stringify(users));
+
+            res.render('user/user', {
+                count: users.length,
+                users: users,
+                channel: channel
+            });
         });
+        // MAYBE REPLACE LOGIC ABOVE AS DONT NEED TO GET LIST OF USERS
 
         /*
         switch (channel) {

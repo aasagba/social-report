@@ -15,22 +15,31 @@ function client (root) {
 
             // Get all social users
             get: function (query, done) {
-                get(root + 'users', query, done);
-            },
+                get(root + 'users/accounts', query, done);
+            }
         },
 
         posts: function (id) {
             return {
                 // Get Post timeline for user
                 get: function (query, done) {
-                    get(root + 'user/' + id, query, done);
+                    get(root + 'user/account/' + id, query, done);
                 }
             }
         },
 
+        user: {
+            get: function (query, done) {
+                get(root + 'user/results', query, done);
+            }
+        }
+/*
         user: function (id) {
             return {
 
+                run: function () {
+                  get(root + 'user/' + query, done);
+                },
                 // Get a social user
                 get: function (query, done) {
                     get(root + 'users/' + id, query, done);
@@ -46,7 +55,7 @@ function client (root) {
                     del(root + 'users/' + id, null, done);
                 }
             };
-        }
+        }*/
     };
 }
 
@@ -80,7 +89,7 @@ function req (method, url, query, body, done) {
         body: body,
         json: true
     }, function (err, res, body) {
-        console.log(body);
+
        if (err) {
            return done(err);
        }

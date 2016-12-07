@@ -8,7 +8,7 @@ function route (app) {
     app.express.get('/', function (req, res, next) {
 
         res.render('index', {
-            channels: [{channel: "twitter"},{channel: "facebook"},{channel:"linkedin"}]
+            channels: [{client: "BSI", channel: "twitter"},{client: "BSI", channel: "facebook"},{client: "BSI", channel:"linkedin"}]
         });
     });
 }

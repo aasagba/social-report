@@ -17,14 +17,14 @@
     <tbody>
     {{#each users}}
     <tr>
-        <td><a href="/channel/{{../channel}}/{{name}}">{{name}}</a></td>
+        <td><a href="/channel/{{../channel}}/account/{{screenName}}">{{name}}</a></td>
         <td>{{location}}</td>
         <td>{{followers_count}}</td>
         <td>{{friends_count}}</td>
         <td>{{favourites_count}}</td>
         <td>{{statuses_count}}</td>
-        <td>{{status.created_at}}</td>
-        <td>{{status.text}}</td>
+        <td>{{latest_status_date}}</td>
+        <td>{{latest_status}}</td>
     </tr>
     {{/each}}
     </tbody>
