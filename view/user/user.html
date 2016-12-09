@@ -1,5 +1,6 @@
 {{#content "title"}}{{channel}}{{/content}}
 <p>{{channel}} users - <b>{{count}}</b></p>
+<div><a href="/run/user/{{client}}">Update Results</a></div>
 
 <table id="" name="" class="">
     <thead>
@@ -12,19 +13,21 @@
         <th>Posts</th>
         <th>Latest Post Date</th>
         <th>Latest Post</th>
+        <th>Updated</th>
     </tr>
     </thead>
     <tbody>
     {{#each users}}
     <tr>
-        <td><a href="/channel/{{../channel}}/account/{{screenName}}">{{name}}</a></td>
-        <td>{{location}}</td>
-        <td>{{followers_count}}</td>
-        <td>{{friends_count}}</td>
-        <td>{{favourites_count}}</td>
-        <td>{{statuses_count}}</td>
-        <td>{{latest_status_date}}</td>
-        <td>{{latest_status}}</td>
+        <td><a href="/channel/{{../channel}}/account/{{last_result.screen_name}}">{{last_result.name}}</a></td>
+        <td>{{last_result.location}}</td>
+        <td>{{last_result.followers_count}}</td>
+        <td>{{last_result.friends_count}}</td>
+        <td>{{last_result.favourites_count}}</td>
+        <td>{{last_result.statuses_count}}</td>
+        <td>{{last_result.latest_status_date}}</td>
+        <td>{{last_result.latest_status}}</td>
+        <td>{{last_result.date}}</td>
     </tr>
     {{/each}}
     </tbody>

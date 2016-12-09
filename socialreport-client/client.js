@@ -7,15 +7,27 @@ module.exports = client;
 // Create a web-service client
 function client (root) {
     return {
+
+        accounts: {
+            // Get all social users
+            get: function (query, done) {
+                get(root + 'users/accounts', query, done);
+            }
+        },
+
         users: {
             // Create a new social user
             create: function (user, done) {
                 post(root + 'users', user, done);
             },
 
-            // Get all social users
+            // Get user lookup for all client accounts
             get: function (query, done) {
-                get(root + 'users/accounts', query, done);
+                get(root + 'user/results', query, done);
+            },
+
+            run: function (query, done) {
+                get(root + 'user/run', query, done);
             }
         },
 
@@ -28,34 +40,46 @@ function client (root) {
             }
         },
 
-        user: {
-            get: function (query, done) {
-                get(root + 'user/results', query, done);
-            }
-        }
-/*
         user: function (id) {
             return {
 
-                run: function () {
-                  get(root + 'user/' + query, done);
-                },
-                // Get a social user
+                // Get user lookup for one account
                 get: function (query, done) {
-                    get(root + 'users/' + id, query, done);
+                    get(root + 'user/results/' + id, query, done);
                 },
 
-                // Edit a social user
-                edit: function (edits, done) {
-                    patch(root + 'users/' + id, edits, done);
+                run: function (query, done) {
+                    post(root + '/user/run/' + id, query, done);
                 },
 
-                // Remove a social user
-                remove: function (done) {
-                    del(root + 'users/' + id, null, done);
+                results: function (query, done) {
+                    get(root + 'user/' + id + '/results', query, done);
                 }
             };
-        }*/
+        }
+        /*
+         user: function (id) {
+         return {
+
+         run: function () {
+         get(root + 'user/' + query, done);
+         },
+         // Get a social user
+         get: function (query, done) {
+         get(root + 'users/' + id, query, done);
+         },
+
+         // Edit a social user
+         edit: function (edits, done) {
+         patch(root + 'users/' + id, edits, done);
+         },
+
+         // Remove a social user
+         remove: function (done) {
+         del(root + 'users/' + id, null, done);
+         }
+         };
+         }*/
     };
 }
 
@@ -90,9 +114,9 @@ function req (method, url, query, body, done) {
         json: true
     }, function (err, res, body) {
 
-       if (err) {
-           return done(err);
-       }
+        if (err) {
+            return done(err);
+        }
         if (res.statusCode > 299) {
             var message = (body && body.message ? body.message : 'Error ' + res.statusCode);
             return done(new Error(message));
@@ -101,12 +125,12 @@ function req (method, url, query, body, done) {
     });
 
     /*
-    console.log(method, url, query, body);
-    body = {
-        user: "testuser",
-        posts: 12,
-        followers: 20,
-        friend: 22
-    };
-    done(null,body);*/
+     console.log(method, url, query, body);
+     body = {
+     user: "testuser",
+     posts: 12,
+     followers: 20,
+     friend: 22
+     };
+     done(null,body);*/
 }
