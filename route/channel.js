@@ -176,6 +176,22 @@ function route (app) {
         });*/
     });
 
+    // Get followers
+    app.express.get('/followers/account/:account', function (req, res, next) {
+        var account = req.params.account;
+
+        app.webservice.accounts.followers({account: account}, function (err, followers) {
+            if (err) {
+                return next(err);
+            }
+
+            res.render('user/followers', {
+                count: followers.length,
+                followers: followers
+            });
+        });
+    });
+
 }
 
 /*

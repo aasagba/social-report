@@ -1,0 +1,25 @@
+
+<p>followers - <b>{{count}}</b></p>
+
+<table id="" name="" class="">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Screen Name</th>
+        <th>Location</th>
+        <th>Description</th>
+        <th>Url</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each followers}}
+    <tr>
+        <td>{{name}}</td>
+        <td>{{screen_name}}</td>
+        <td>{{location}}</td>
+        <td>{{description}}</td>
+        <td>{{url}}</td>
+    </tr>
+    {{/each}}
+    </tbody>
+</table>

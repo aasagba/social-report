@@ -12,6 +12,10 @@ function client (root) {
             // Get all social users
             get: function (query, done) {
                 get(root + 'users/accounts', query, done);
+            },
+
+            followers: function (query, done) {
+                get(root + 'followers', query, done);
             }
         },
 
@@ -55,6 +59,7 @@ function client (root) {
                 results: function (query, done) {
                     get(root + 'user/' + id + '/results', query, done);
                 }
+
             };
         }
         /*
