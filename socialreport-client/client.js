@@ -16,6 +16,10 @@ function client (root) {
 
             followers: function (query, done) {
                 get(root + 'followers', query, done);
+            },
+
+            friends: function (query, done) {
+                get(root + 'friends', query, done);
             }
         },
 

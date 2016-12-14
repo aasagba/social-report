@@ -19,12 +19,12 @@
     <tbody>
     {{#each users}}
     <tr>
-        <td><a href="/channel/{{../channel}}/account/{{last_result.screen_name}}">{{last_result.name}}</a></td>
+        <td>{{last_result.name}}</td>
         <td>{{last_result.location}}</td>
         <td><a href="/followers/account/{{last_result.account}}">{{last_result.followers_count}}</a></td>
-        <td>{{last_result.friends_count}}</td>
+        <td><a href="/friends/account/{{last_result.account}}">{{last_result.friends_count}}</a></td>
         <td>{{last_result.favourites_count}}</td>
-        <td>{{last_result.statuses_count}}</td>
+        <td><a href="/channel/{{../channel}}/account/{{last_result.screen_name}}">{{last_result.statuses_count}}</a></td>
         <td>{{last_result.latest_status_date}}</td>
         <td>{{last_result.latest_status}}</td>
         <td>{{last_result.date}}</td>

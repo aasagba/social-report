@@ -192,6 +192,23 @@ function route (app) {
         });
     });
 
+    // Get friends
+    app.express.get('/friends/account/:account', function (req, res, next) {
+        var account = req.params.account;
+
+        app.webservice.accounts.friends({account: account}, function (err, friends) {
+            if (err) {
+                return next(err);
+            }
+            console.log("Friends: " + JSON.stringify(friends));
+
+            res.render('user/friends', {
+                count: friends.length,
+                friends: friends
+            });
+        });
+    });
+
 }
 
 /*
