@@ -2,5 +2,22 @@
 <div>
     {{#each channels}}
     <p><a href="/channel/{{channel}}/client/{{client}}">{{channel}}</a></p>
+
+    <p>Followers: {{scores.followers}}</p>
+    <p>Friends: {{scores.friends}}</p>
+    <p>Favourites: {{scores.favourites}}</p>
+    <p>Posts: {{scores.posts}}</p>
+    <!-- Total Followers -->
+    <!-- Total Friends -->
+    <!-- total engagements:
+    Favourites + posts?
+    -->
+
     {{/each}}
+
+    <p>Total: </p>
+    <p>Followers: {{totalScores.followers}}</p>
+    <p>Friends: {{totalScores.friends}}</p>
+    <p>Favourites: {{totalScores.favourites}}</p>
+    <p>Posts: {{totalScores.posts}}</p>
 </div>

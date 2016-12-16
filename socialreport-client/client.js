@@ -20,7 +20,12 @@ function client (root) {
 
             friends: function (query, done) {
                 get(root + 'friends', query, done);
+            },
+
+            posts: function (query, done) {
+                get(root + 'posts', query, done);
             }
+
         },
 
         users: {
@@ -43,7 +48,7 @@ function client (root) {
             return {
                 // Get Post timeline for user
                 get: function (query, done) {
-                    get(root + 'user/account/' + id, query, done);
+                    get(root + 'posts/' + id, query, done);
                 }
             }
         },

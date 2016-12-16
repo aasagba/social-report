@@ -9,7 +9,7 @@ var twitterClient = createTwitterClient();
 function route (app) {
 
     var getLatestResultById = function (user,index) {
-        //console.log("in getResultById");
+        console.log("in getResultById");
         return new Promise(function(resolve, reject) {
             //model.result.getByTaskId(task.id, {}, function (err, results) {
             app.webservice.user(user._id).results({}, function (err, results) {
@@ -32,24 +32,20 @@ function route (app) {
 
 
     // Get Post Timeline
-    app.express.get('/channel/:channel/account/:account', function (req, res, next) {
-        console.log("in /channel/:channel/account/:account");
-        var channel = req.params.channel.toLowerCase();
-        var account = req.params.account.trim().toUpperCase();
-        account = account.replace(/ /g,"_");
-        var options = {screen_name: 'BSI_UK', count:200};
-        var action = "statuses/user_timeline";
+    app.express.get('/posts/account/:account', function (req, res, next) {
+        console.log("in /posts/account/:account");
+        var account = req.params.account;
         console.log("account: " + account);
-        console.log("Channel: " + channel);
 
-        app.webservice.posts(account).get({channel: channel, client: account}, function (err, posts) {
+        //app.webservice.posts(account).get({channel: channel, client: account}, function (err, posts) {
+        app.webservice.accounts.posts({account: account}, function (err, posts) {
             console.log("posts from webservice: ");
             console.log(posts.length);
 
             res.render('user/posts', {
                 count: posts.length,
                 posts: posts,
-                channel: channel
+                channel: "twitter"
             });
         });
 
