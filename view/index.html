@@ -1,23 +1,140 @@
 {{#content "title"}}Homepage{{/content}}
-<div>
-    {{#each channels}}
-    <p><a href="/channel/{{channel}}/client/{{client}}">{{channel}}</a></p>
+<div class="home-container">
+    <h1>Social Dashboard</h1>
 
-    <p>Followers: {{scores.followers}}</p>
-    <p>Friends: {{scores.friends}}</p>
-    <p>Favourites: {{scores.favourites}}</p>
-    <p>Posts: {{scores.posts}}</p>
-    <!-- Total Followers -->
-    <!-- Total Friends -->
-    <!-- total engagements:
-    Favourites + posts?
-    -->
+    <div class="global-intro">Global Account statistics for BSI Social accounts.</div>
+
+    <div class="total-panel">
+        <div class="top">
+            <h2>BSI</h2>
+            <h3>The UK’s national standards body & the business standards company providing services in knowledge… http://bit.ly/BSI-Webpage</h3>
+        </div>
+        <div class="info">
+            <div class="scores"><span class="score">{{totalScores.followers}}</span><span class="label">TOTAL FOLLOWERS</span></div>
+            <div class="scores"><span class="score">{{totalScores.friends}}</span><span class="label">TOTAL FRIENDS</span></div>
+            <div class="scores"><span class="score">{{totalScores.favourites}}</span><span class="label">TOTAL FAVOURITES</span></div>
+            <div class="scores"><span class="score">{{totalScores.posts}}</span><span class="label">TOTAL POSTS</span></div>
+        </div>
+    </div>
+    <h2 class="account-stats-title">Social Account Statistics</h2>
+    {{#each channels}}
+    <div class="panel">
+        <div class="top">
+            <h2><a href="/channel/{{channel}}/client/{{client}}">{{channel}}</a></h2>
+            <i class="fa fa-{{lowercase channel}}-square" aria-hidden="true"></i>
+        </div>
+        <div class="info">
+            <div class="scores"><span class="score">{{scores.followers}}</span><span class="label">FOLLOWERS</span></div>
+            <div class="scores"><span class="score">{{scores.friends}}</span><span class="label">FRIENDS</span></div>
+            <div class="scores"><span class="score">{{scores.favourites}}</span><span class="label">FAVOURITES</span></div>
+            <div class="scores"><span class="score">{{scores.posts}}</span><span class="label">POSTS</span></div>
+        </div>
+    </div>
 
     {{/each}}
-
-    <p>Total: </p>
-    <p>Followers: {{totalScores.followers}}</p>
-    <p>Friends: {{totalScores.friends}}</p>
-    <p>Favourites: {{totalScores.favourites}}</p>
-    <p>Posts: {{totalScores.posts}}</p>
 </div>
+
+<style>
+    .home-container {
+        /*padding: 10px 0 0 0;*/
+    }
+    .home-container h1 {
+        font-family: sans-serif;
+        font-size: 28px;
+        color: teal;
+    }
+    .home-container .global-intro {
+        padding: 20px;
+    }
+    .home-container .account-stats-title {
+        color: #34495e;
+        border-color: #34495e;
+        font-size: 1.25em;
+        letter-spacing: 1px;
+        color: #34495e;
+        padding-bottom: .75rem;
+        border-bottom: 4px solid rgba(52,73,94,.6);
+        margin-bottom: 2.5rem;
+        width: 234px;
+    }
+    .home-container .panel {
+        width: 300px;
+        height: 200px;
+        /*background-color: lightblue;*/
+        display: inline-block;
+        margin: 0 10px;
+    }
+    .home-container .total-panel {
+        width: 950px;
+        height: 145px;
+        /*background-color: lightblue;*/
+        display: inline-block;
+        margin: 5px 10px 35px 10px;
+        border: 1px solid #f5f5f5;
+    }
+    .home-container .panel .top i {
+        margin-left: 5px;
+        /*
+        display: inline-block;
+        float: right;
+        line-height: 30px;*/
+    }
+    .home-container .panel .top, .total-panel .top {
+        background-color: #f5f5f5;
+        padding: 5px 5px 5px 10px;
+    }
+    .home-container .total-panel .top h2 {
+        font-size: 20px;
+        font-family: Arial;
+        text-align: left;
+    }
+    .home-container .panel .top h2 a, .total-panel .top h2 {
+        text-decoration: none;
+        color: teal;
+        font-size: 17px;
+        font-family: Arial;
+    }
+    .home-container .panel .top h2, .total-panel .top h2 {
+        margin: 0;
+        line-height: 30px;
+        display: inline-block;
+    }
+    .home-container .total-panel .top h3 {
+        margin:0;
+        vertical-align: baseline;
+        color: #999;
+        font-size: 13px;
+        font-family: sans-serif;
+        font-weight: 100;
+        line-height: 20px;
+        padding-bottom: 5px;
+    }
+    .home-container .panel .info, .total-panel .info {
+        /*margin: 10px;*/
+        padding: 10px;
+
+    }
+    .home-container .panel .info .scores {
+        border-bottom: 1px #ececec solid;
+        padding: 5px 0;
+    }
+    .home-container .total-panel .info .scores {
+        display: inline-block;
+        width: 229px;
+        text-align: center;
+    }
+    .home-container .panel .info .scores span.score, .total-panel .info .scores span.score {
+        font-size: 40px;
+        font-family: sans-serif;
+    }
+    .home-container .panel .info .scores span, .total-panel .info .scores span {
+        clear: both;
+        display: block;
+    }
+    .home-container .panel .info .scores span.label, .total-panel .info .scores span.label {
+        color: #999;
+        font-size: .9em;
+        font-weight: 500;
+    }
+
+</style>

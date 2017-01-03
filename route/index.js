@@ -5,32 +5,7 @@ var bodyParser = require('body-parser');
 
 
 function route (app) {
-    var globalScores = {
-        twitter: {
-            followers: 0,
-            friends: 0,
-            favourites: 0,
-            posts: 0
-        },
-        facebook: {
-            followers: 0,
-            friends: 0,
-            favourites: 0,
-            posts: 0
-        },
-        linkedin: {
-            followers: 0,
-            friends: 0,
-            favourites: 0,
-            posts: 0
-        },
-        total: {
-            followers: 0,
-            friends: 0,
-            favourites: 0,
-            posts: 0
-        }
-    };
+    var globalScores = {};
 
     var processScores = function (user,index) {
         console.log("in getResultById");
@@ -66,6 +41,32 @@ function route (app) {
     app.express.get('/client/:client', function (req, res, next) {
 
         var client = req.params.client;
+        globalScores = {
+            twitter: {
+                followers: 0,
+                friends: 0,
+                favourites: 0,
+                posts: 0
+            },
+            facebook: {
+                followers: 0,
+                friends: 0,
+                favourites: 0,
+                posts: 0
+            },
+            linkedin: {
+                followers: 0,
+                friends: 0,
+                favourites: 0,
+                posts: 0
+            },
+            total: {
+                followers: 0,
+                friends: 0,
+                favourites: 0,
+                posts: 0
+            }
+        };
 
         app.webservice.accounts.get({client: client}, function (err, users) {
             if (err) {
@@ -90,17 +91,17 @@ function route (app) {
                     channels: [
                         {
                             client: "BSI",
-                            channel: "twitter",
+                            channel: "Twitter",
                             scores: globalScores.twitter
                         },
                         {
                             client: "BSI",
-                            channel: "facebook",
+                            channel: "Facebook",
                             scores: globalScores.facebook
                         },
                         {
                             client: "BSI",
-                            channel: "linkedin",
+                            channel: "Linkedin",
                             scores: globalScores.linkedin
                         }
                     ],

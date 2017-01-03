@@ -51,6 +51,8 @@ function initApp (config, callback) {
     app.express.set('view engine', 'html');
 
     // View helpers
+    require('./view/helper/string')(hbs.registerHelper);
+    require('./view/helper/date')(hbs.registerHelper);
 
     // Populate view locals
     app.express.locals = {
