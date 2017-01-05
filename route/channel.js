@@ -8,6 +8,8 @@ var twitterClient = createTwitterClient();
 
 function route (app) {
 
+    var userResults = {};
+
     var getLatestResultById = function (user,index) {
         console.log("in getResultById");
         return new Promise(function(resolve, reject) {
@@ -116,6 +118,9 @@ function route (app) {
             Promise.all(preparedResults).then(function (preparedResults) {
                 console.log("Prepared Results: " + JSON.stringify(preparedResults));
                 console.log("Length: " + preparedResults.length);
+                // save results globally to use for graphs
+                userResults = preparedResults;
+
                 res.render('user/user', {
                     count: preparedResults.length,
                     users: preparedResults,
@@ -173,17 +178,23 @@ function route (app) {
     });
 
     // Get followers
-    app.express.get('/followers/account/:account', function (req, res, next) {
+    app.express.get('/followers/channel/:channel/account/:account', function (req, res, next) {
         var account = req.params.account;
-
+        var channel = req.params.channel;
+        console.log("in followers");
         app.webservice.accounts.followers({account: account}, function (err, followers) {
             if (err) {
                 return next(err);
             }
+            console.log("User Stats: " + JSON.stringify(userResults));
 
             res.render('user/followers', {
                 count: followers.length,
-                followers: followers
+                followers: followers,
+                hasOneResult: (followers.length < 2),
+                userStats: userResults,
+                isDetailsPage: true,
+                channel: channel,
             });
         });
     });
@@ -200,11 +211,59 @@ function route (app) {
 
             res.render('user/friends', {
                 count: friends.length,
-                friends: friends
+                friends: friends,
+                isDetailsPage: true
             });
         });
     });
 
+
+    // Get stats
+    app.express.get('/stats/client/:client', function (req, res, next) {
+        var client = req.params.client;
+
+        app.webservice.users.get({client: client}, function (err, users) {
+            console.log("Got " + users.length);
+            console.log(JSON.stringify(users));
+            var account = users[0].account;
+
+            app.webservice.accounts.getone({client: users[0].client, account: users[0].account}, function (err, account) {
+
+                console.log("account: " + account);
+
+                var preparedResults = [];
+                preparedResults = account.map(getLatestResultById);
+
+
+                /*res.render('user/stats', {
+                    count: users.length,
+                    results: users,
+                    hasOneResult: (users.length < 2),
+                    client: client
+                });*/
+
+
+                Promise.all(preparedResults).then(function (preparedResults) {
+                    //console.log("Prepared Results: " + JSON.stringify(preparedResults));
+                    //console.log("Length: " + preparedResults.length);
+                    // save results globally to use for graphs
+                    userResults = preparedResults;
+
+                    res.render('user/stats', {
+                        count: users.length,
+                        results: users,
+                        hasOneResult: (users.length < 2),
+                        client: client,
+                        //count: preparedResults.length,
+                        lastestResults: preparedResults,
+                    });
+                });
+            });
+
+        });
+
+
+    });
 }
 
 /*

@@ -21,12 +21,12 @@
     <tbody>
     {{#each users}}
     <tr>
-        <td class="name">{{last_result.name}}</td>
+        <td class="name"><a href="/stats/client/{{last_result.screen_name}}">{{last_result.name}}</a></td>
         <td class="location">{{last_result.location}}</td>
-        <td class="score"><a href="/followers/account/{{last_result.account}}">{{last_result.followers_count}}</a></td>
-        <td class="score"><a href="/friends/account/{{last_result.account}}">{{last_result.friends_count}}</a></td>
-        <td class="score"><a href="#">{{last_result.favourites_count}}</a></td>
-        <td class="score"><a href="/posts/account/{{last_result.account}}">{{last_result.statuses_count}}</a></td>
+        <td class="score"><a href="/stats/client/{{last_result.screen_name}}">{{last_result.followers_count}}</a></td>
+        <td class="score"><a href="/stats/client/{{last_result.screen_name}}">{{last_result.friends_count}}</a></td>
+        <td class="score"><a href="/stats/client/{{last_result.screen_name}}">{{last_result.favourites_count}}</a></td>
+        <td class="score"><a href="/stats/client/{{last_result.screen_name}}">{{last_result.statuses_count}}</a></td>
         <td class="post">{{last_result.latest_status}}</td>
         <td class="post-date">{{datesubstring last_result.latest_status_date}}</td>
         <!--<td class="date">{{last_result.date}}</td>-->
@@ -45,7 +45,7 @@
         padding-bottom: .75rem;
         border-bottom: 4px solid rgba(52,73,94,.6);
         margin-bottom: 2.5rem;
-        width: 325px;
+        display: table;
     }
 
     table.account-lookup {

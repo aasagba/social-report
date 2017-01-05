@@ -14,6 +14,10 @@ function client (root) {
                 get(root + 'users/accounts', query, done);
             },
 
+            getone: function (query, done) {
+                get(root + 'users/account', query, done);
+            },
+
             followers: function (query, done) {
                 get(root + 'followers', query, done);
             },

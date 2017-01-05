@@ -16,8 +16,10 @@
     "compression": "^1.6.2",
     "express": "^3.4.8",
     "express-hbs": "^0.2.2",
+    "moment": "^2.17.1",
     "mongojs": "^2.4.0",
     "request": "^2.79.0",
-    "twitter": "^1.4.0"
+    "twitter": "^1.4.0",
+    "underscore": "^1.8.3"
   }
 }

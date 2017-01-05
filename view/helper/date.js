@@ -1,5 +1,7 @@
 'use strict';
 
+var moment = require('moment');
+
 module.exports = helper;
 
 function helper (register) {
@@ -28,5 +30,11 @@ function helper (register) {
         console.log(dateFormatted);
         return dateFormatted;
 
+    });
+
+    // Format a date with Moment
+    register('date-format', function (context, block) {
+        var format = block.hash.format || 'YYYY-MM-DD HH:mm:ss';
+        return moment(context).format(format);
     });
 }

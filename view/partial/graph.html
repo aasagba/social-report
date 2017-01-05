@@ -1,0 +1,77 @@
+<div class="col-lg-12 clearfix">
+    <div class="graph-container graph-spacer ruled clearfix">
+        <div data-role="graph" class="graph"></div>
+        <div class="row">
+            <ul class="list-unstyled floated-list series-checkboxes clearfix crunch-bottom col-md-3 col-sm-6 col-xs-12 pull-right" data-role="series-checkboxes"></ul>
+        </div>
+        <div class="dashedLegend">
+            <div class="dashedContainer">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="legendColorBox">
+                                <div class="clearfix legendIcon legendFollowers">
+                                    <div></div>
+                                </div>
+                            </td>
+                            <td class="legendLabel">Followers</td>
+                        </tr>
+                        <tr>
+                            <td class="legendColorBox">
+                                <div class="clearfix legendIcon legendFriends">
+                                    <div></div>
+                                </div>
+                            </td>
+                            <td class="legendLabel">Friends</td>
+                        </tr>
+                        <tr>
+                            <td class="legendColorBox">
+                                <div class="clearfix legendIcon legendFavourites">
+                                    <div></div>
+                                </div>
+                            </td>
+                            <td class="legendLabel">Favourites</td>
+                        </tr>
+                        <tr>
+                            <td class="legendColorBox">
+                                <div class="clearfix legendIcon legendStatuses">
+                                    <div></div>
+                                </div>
+                            </td>
+                            <td class="legendLabel">Statuses</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button data-role='zoom-reset' class="btn btn-xs btn-primary pull-right btn-reset hidden">Reset Zoom <i class="glyphicon glyphicon-zoom-out"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-12 hidden">
+    <div class="graph-spacer ruled">
+        <table id="graph-data" class="table graph-table" summary="Social results from web service for this page">
+            <caption>social results for this account</caption>
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th class="text-center">Followers</th>
+                <th class="text-center">Friends</th>
+                <th class="text-center">Favourites</th>
+                <th class="text-center">Statuses</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#results}}
+            <tr data-role="stats">
+                <td data-value="{{date}}" data-role="date">{{date-format date format="DD MMM YYYY"}}</td>
+                <td class="text-center" data-label="followers">{{followers_count}}</td>
+                <td class="text-center" data-label="friends">{{friends_count}}</td>
+                <td class="text-center" data-label="favourites">{{favourites_count}}</td>
+                <td class="text-center" data-label="statuses">{{statuses_count}}</td>
+            </tr>
+            {{/results}}
+            </tbody>
+        </table>
+    </div>
+</div>

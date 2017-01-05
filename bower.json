@@ -1,0 +1,14 @@
+{
+  "name": "lfi-social",
+  "description": "LFI Social Media Integration Platform",
+  "main": "index.js",
+  "authors": [
+    "Adrian Asagba (aasagba@gmail.com)"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/aasagba/social-report",
+  "private": true,
+  "dependencies": {
+    "Flot": "flot#^0.8.3"
+  }
+}

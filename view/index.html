@@ -18,7 +18,7 @@
     </div>
     <h2 class="account-stats-title">Social Account Statistics</h2>
     {{#each channels}}
-    <div class="panel">
+    <div class="panel" onclick="location.href='/channel/{{channel}}/client/{{client}}';">
         <div class="top">
             <h2><a href="/channel/{{channel}}/client/{{client}}">{{channel}}</a></h2>
             <i class="fa fa-{{lowercase channel}}-square" aria-hidden="true"></i>
@@ -37,6 +37,9 @@
 <style>
     .home-container {
         /*padding: 10px 0 0 0;*/
+    }
+    .home-container .panel {
+        cursor:pointer;
     }
     .home-container h1 {
         font-family: sans-serif;

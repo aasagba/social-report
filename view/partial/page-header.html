@@ -1,8 +1,12 @@
 <header>
     <div role="banner" class="header">
         <div class="container">
+            {{#if isDetailsPage}}
+            <a href="/client/BSI">Home</a><span> | <a href="/channel/{{channel}}/client/BSI">accounts</a><span> | LFI Social Report</span>
+            {{else}}
             <!-- TODO Change hardcoded reference below -->
             <a href="/client/BSI">Home</a><span> | LFI Social Report</span>
+            {{/if}}
         </div>
 
     </div>

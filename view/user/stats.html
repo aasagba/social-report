@@ -1,0 +1,44 @@
+{{#content "title"}}{{channel}}{{/content}}
+
+<h1 class="account-stats-title">Account Statistics - {{client}}</h1>
+
+{{#if results}}
+
+{{#unless hasOneResult}}
+
+{{> graph}}
+{{/unless}}
+
+<table id="" name="" class="account-lookup">
+    <thead>
+    <tr>
+        <th>Site</th>
+        <th>Location</th>
+        <th>Followers</th>
+        <th>Friends</th>
+        <th>Favourites</th>
+        <th>Posts</th>
+        <th>Latest Post</th>
+        <th>Post Date</th>
+        <th>Updated</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each lastestResults}}
+    <tr>
+        <td class="name"><a href="/stats/client/{{last_result.screen_name}}">{{last_result.name}}</a></td>
+        <td class="location">{{last_result.location}}</td>
+        <td class="score"><a href="/followers/channel/{{channel}}/account/{{last_result.account}}">{{last_result.followers_count}}</a></td>
+        <td class="score"><a href="/friends/account/{{last_result.account}}">{{last_result.friends_count}}</a></td>
+        <td class="score"><a href="#">{{last_result.favourites_count}}</a></td>
+        <td class="score"><a href="/posts/account/{{last_result.account}}">{{last_result.statuses_count}}</a></td>
+        <td class="post">{{last_result.latest_status}}</td>
+        <td class="post-date">{{last_result.latest_status_date}}</td>
+        <!--<td class="date">{{last_result.date}}</td>-->
+        <td class="date">{{days-since last_result.date}} days ago</td>
+    </tr>
+    {{/each}}
+    </tbody>
+</table>
+
+{{/if}}
