@@ -32,7 +32,7 @@ require('./app')(config, function (err, app) {
 
     // Start the webservice if required
     if (typeof config.webservice === 'object') {
-        require('../socialreport-webservice')(config.webservice, function (err, webservice) {
+        require('socialreport-webservice')(config.webservice, function (err, webservice) {
             console.log("");
             console.log(chalk.underline.cyan('socialreport-webservice'));
             console.log(chalk.grey('mode: %s'), process.env.NODE_ENV);

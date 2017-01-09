@@ -1,0 +1,431 @@
+
+[
+  {
+    "id": 2574388794,
+    "id_str": "2574388794",
+    "name": "Merlie Calvert",
+    "screen_name": "merlieldc",
+    "location": "",
+    "description": "#Intrapreneur, #writer, dreamer, #lawyer, knitter, rebel, proud #mum. Founder @elXtr. Relentless at 'what if?' I speak for myself. blog:https://t.co/5m727unPOL",
+    "url": null,
+    "entities":  {
+      "description":  {
+        "urls":  [
+          {
+            "url": "https://t.co/5m727unPOL",
+            "expanded_url": "http://news.elxtr.co.uk/",
+            "display_url": "news.elxtr.co.uk",
+            "indices":  [
+              136,
+              159
+            ]
+          }
+        ]
+      }
+    },
+    "protected": false,
+    "followers_count": 2360,
+    "friends_count": 3429,
+    "listed_count": 948,
+    "created_at": "Wed Jun 18 08:09:33 +0000 2014",
+    "favourites_count": 11065,
+    "utc_offset": 3600,
+    "time_zone": "Amsterdam",
+    "geo_enabled": false,
+    "verified": false,
+    "statuses_count": 6710,
+    "lang": "en-gb",
+    "status":  {
+      "created_at": "Mon Dec 12 14:45:59 +0000 2016",
+      "id": 808322008798863400,
+      "id_str": "808322008798863360",
+      "text": "RT @ElXtr: It's almost over! Want to keep #TheGame players in your network after play? Find all of them here https://t.co/INpD1AtMJJ #Unloc…",
+      "truncated": false,
+      "entities":  {
+        "hashtags":  [
+          {
+            "text": "TheGame",
+            "indices":  [
+              42,
+              50
+            ]
+          }
+        ],
+        "symbols":  [],
+        "user_mentions":  [
+          {
+            "screen_name": "ElXtr",
+            "name": "elXtr",
+            "id": 702800906186793000,
+            "id_str": "702800906186792960",
+            "indices":  [
+              3,
+              9
+            ]
+          }
+        ],
+        "urls":  [
+          {
+            "url": "https://t.co/INpD1AtMJJ",
+            "expanded_url": "http://ow.ly/NhlY306Cw2o",
+            "display_url": "ow.ly/NhlY306Cw2o",
+            "indices":  [
+              109,
+              132
+            ]
+          }
+        ]
+      },
+      "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweeted_status":  {
+        "created_at": "Mon Dec 12 14:45:30 +0000 2016",
+        "id": 808321888439193600,
+        "id_str": "808321888439193600",
+        "text": "It's almost over! Want to keep #TheGame players in your network after play? Find all of them here https://t.co/INpD1AtMJJ #UnlockYourNetwork",
+        "truncated": false,
+        "entities":  {
+          "hashtags":  [
+            {
+              "text": "TheGame",
+              "indices":  [
+                31,
+                39
+              ]
+            },
+            {
+              "text": "UnlockYourNetwork",
+              "indices":  [
+                122,
+                140
+              ]
+            }
+          ],
+          "symbols":  [],
+          "user_mentions":  [],
+          "urls":  [
+            {
+              "url": "https://t.co/INpD1AtMJJ",
+              "expanded_url": "http://ow.ly/NhlY306Cw2o",
+              "display_url": "ow.ly/NhlY306Cw2o",
+              "indices":  [
+                98,
+                121
+              ]
+            }
+          ]
+        },
+        "source": "<a href=\"http://www.hootsuite.com\" rel=\"nofollow\">Hootsuite</a>",
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 1,
+        "favorite_count": 1,
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "lang": "en"
+      },
+      "is_quote_status": false,
+      "retweet_count": 1,
+      "favorite_count": 0,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    "contributors_enabled": false,
+    "is_translator": false,
+    "is_translation_enabled": false,
+    "profile_background_color": "B2DFDA",
+    "profile_background_image_url": "http://abs.twimg.com/images/themes/theme13/bg.gif",
+    "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme13/bg.gif",
+    "profile_background_tile": false,
+    "profile_image_url": "http://pbs.twimg.com/profile_images/805562599857422337/Ttf9Jsym_normal.jpg",
+    "profile_image_url_https": "https://pbs.twimg.com/profile_images/805562599857422337/Ttf9Jsym_normal.jpg",
+    "profile_banner_url": "https://pbs.twimg.com/profile_banners/2574388794/1478442642",
+    "profile_link_color": "93A644",
+    "profile_sidebar_border_color": "EEEEEE",
+    "profile_sidebar_fill_color": "FFFFFF",
+    "profile_text_color": "333333",
+    "profile_use_background_image": true,
+    "has_extended_profile": false,
+    "default_profile": false,
+    "default_profile_image": false,
+    "following": false,
+    "follow_request_sent": false,
+    "notifications": false,
+    "translator_type": "none"
+  },
+  {
+    "id": 1280091572,
+    "id_str": "1280091572",
+    "name": "Stella I. Tsartsara",
+    "screen_name": "stsartsara",
+    "location": "Brussels, Belgium",
+    "description": "Government Policy in LTC, Integrated Care, Wellbeing, Senior Tourism and EU Cross Border Healthcare. Gerontologist and a crazy cat/dog lady...",
+    "url": "https://t.co/br12yjUCNj",
+    "entities":  {
+      "url":  {
+        "urls":  [
+          {
+            "url": "https://t.co/br12yjUCNj",
+            "expanded_url": "https://www.linkedin.com/in/stella-i-tsartsara-456a8322",
+            "display_url": "linkedin.com/in/stella-i-ts…",
+            "indices":  [
+              0,
+              23
+            ]
+          }
+        ]
+      },
+      "description":  {
+        "urls":  []
+      }
+    },
+    "protected": false,
+    "followers_count": 806,
+    "friends_count": 1863,
+    "listed_count": 83,
+    "created_at": "Tue Mar 19 10:33:39 +0000 2013",
+    "favourites_count": 1184,
+    "utc_offset": -28800,
+    "time_zone": "Pacific Time (US & Canada)",
+    "geo_enabled": false,
+    "verified": false,
+    "statuses_count": 2056,
+    "lang": "en",
+    "status":  {
+      "created_at": "Sat Dec 10 10:56:35 +0000 2016",
+      "id": 807539501262401500,
+      "id_str": "807539501262401536",
+      "text": "Amazing work mapping sustainable dev. and #planning in #healthcare I still plan to immigrate and work in the UK… https://t.co/f5MFgOfAP7",
+      "truncated": true,
+      "entities":  {
+        "hashtags":  [
+          {
+            "text": "planning",
+            "indices":  [
+              42,
+              51
+            ]
+          },
+          {
+            "text": "healthcare",
+            "indices":  [
+              55,
+              66
+            ]
+          }
+        ],
+        "symbols":  [],
+        "user_mentions":  [],
+        "urls":  [
+          {
+            "url": "https://t.co/f5MFgOfAP7",
+            "expanded_url": "https://twitter.com/i/web/status/807539501262401536",
+            "display_url": "twitter.com/i/web/status/8…",
+            "indices":  [
+              113,
+              136
+            ]
+          }
+        ]
+      },
+      "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": true,
+      "quoted_status_id": 806616866273841200,
+      "quoted_status_id_str": "806616866273841160",
+      "retweet_count": 1,
+      "favorite_count": 0,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "en"
+    },
+    "contributors_enabled": false,
+    "is_translator": false,
+    "is_translation_enabled": false,
+    "profile_background_color": "000000",
+    "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+    "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+    "profile_background_tile": false,
+    "profile_image_url": "http://pbs.twimg.com/profile_images/708057588848394240/mCr2vuj6_normal.jpg",
+    "profile_image_url_https": "https://pbs.twimg.com/profile_images/708057588848394240/mCr2vuj6_normal.jpg",
+    "profile_banner_url": "https://pbs.twimg.com/profile_banners/1280091572/1461793313",
+    "profile_link_color": "91D2FA",
+    "profile_sidebar_border_color": "000000",
+    "profile_sidebar_fill_color": "000000",
+    "profile_text_color": "000000",
+    "profile_use_background_image": false,
+    "has_extended_profile": false,
+    "default_profile": false,
+    "default_profile_image": false,
+    "following": false,
+    "follow_request_sent": false,
+    "notifications": false,
+    "translator_type": "none"
+  },
+  {
+    "id": 198643841,
+    "id_str": "198643841",
+    "name": "Joe Stott",
+    "screen_name": "revitscratchpad",
+    "location": "Manchester - UK",
+    "description": "BIM Manager for AHR Architects, Revit Evangelist and general BIM Centurion. Views are my own, not those of my employer.",
+    "url": "https://t.co/A5teJjDAhA",
+    "entities":  {
+      "url":  {
+        "urls":  [
+          {
+            "url": "https://t.co/A5teJjDAhA",
+            "expanded_url": "http://www.AHR-Global.com",
+            "display_url": "AHR-Global.com",
+            "indices":  [
+              0,
+              23
+            ]
+          }
+        ]
+      },
+      "description":  {
+        "urls":  []
+      }
+    },
+    "protected": false,
+    "followers_count": 1271,
+    "friends_count": 568,
+    "listed_count": 55,
+    "created_at": "Mon Oct 04 21:40:12 +0000 2010",
+    "favourites_count": 130,
+    "utc_offset": 0,
+    "time_zone": "London",
+    "geo_enabled": true,
+    "verified": false,
+    "statuses_count": 1478,
+    "lang": "en",
+    "status":  {
+      "created_at": "Thu Dec 08 17:48:36 +0000 2016",
+      "id": 806918414027501600,
+      "id_str": "806918414027501568",
+      "text": "Fill in this 20 min questionnaire about our product please... Erm, No.. unless your offering to pay for my time? ,, You know who you are.",
+      "truncated": false,
+      "entities":  {
+        "hashtags":  [],
+        "symbols":  [],
+        "user_mentions":  [],
+        "urls":  []
+      },
+      "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 0,
+      "favorite_count": 1,
+      "favorited": false,
+      "retweeted": false,
+      "lang": "en"
+    },
+    "contributors_enabled": false,
+    "is_translator": false,
+    "is_translation_enabled": false,
+    "profile_background_color": "001329",
+    "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/239026954/x03d98a593e7355230822755a28e4bfc.jpg",
+    "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/239026954/x03d98a593e7355230822755a28e4bfc.jpg",
+    "profile_background_tile": false,
+    "profile_image_url": "http://pbs.twimg.com/profile_images/460332442054692864/MOBYwTiD_normal.png",
+    "profile_image_url_https": "https://pbs.twimg.com/profile_images/460332442054692864/MOBYwTiD_normal.png",
+    "profile_banner_url": "https://pbs.twimg.com/profile_banners/198643841/1406045967",
+    "profile_link_color": "6E6E6E",
+    "profile_sidebar_border_color": "F7B565",
+    "profile_sidebar_fill_color": "000B17",
+    "profile_text_color": "004358",
+    "profile_use_background_image": true,
+    "has_extended_profile": false,
+    "default_profile": false,
+    "default_profile_image": false,
+    "following": false,
+    "follow_request_sent": false,
+    "notifications": false,
+    "translator_type": "none"
+  },
+  {
+    "id": 18413530,
+    "id_str": "18413530",
+    "name": "Şükrü Tütüncü",
+    "screen_name": "SukruTutuncu",
+    "location": "İstanbul",
+    "description": "",
+    "url": null,
+    "entities":  {
+      "description":  {
+        "urls":  []
+      }
+    },
+    "protected": true,
+    "followers_count": 43,
+    "friends_count": 69,
+    "listed_count": 1,
+    "created_at": "Sat Dec 27 19:53:46 +0000 2008",
+    "favourites_count": 4,
+    "utc_offset": 7200,
+    "time_zone": "Istanbul",
+    "geo_enabled": true,
+    "verified": false,
+    "statuses_count": 45,
+    "lang": "tr",
+    "contributors_enabled": false,
+    "is_translator": false,
+    "is_translation_enabled": false,
+    "profile_background_color": "C0DEED",
+    "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000175600473/xsk6mdK7.jpeg",
+    "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000175600473/xsk6mdK7.jpeg",
+    "profile_background_tile": false,
+    "profile_image_url": "http://pbs.twimg.com/profile_images/754623128601563137/eBZZBk9U_normal.jpg",
+    "profile_image_url_https": "https://pbs.twimg.com/profile_images/754623128601563137/eBZZBk9U_normal.jpg",
+    "profile_banner_url": "https://pbs.twimg.com/profile_banners/18413530/1481459080",
+    "profile_link_color": "0084B4",
+    "profile_sidebar_border_color": "FFFFFF",
+    "profile_sidebar_fill_color": "DDEEF6",
+    "profile_text_color": "333333",
+    "profile_use_background_image": false,
+    "has_extended_profile": false,
+    "default_profile": false,
+    "default_profile_image": false,
+    "following": false,
+    "follow_request_sent": false,
+    "notifications": false,
+    "translator_type": "none"
+  }
+]
