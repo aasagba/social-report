@@ -4,7 +4,7 @@
   "description": "LFI Social Media Integration Platform",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "Adrian Asagba (aasagba@gmail.com)",
   "license": "ISC",
