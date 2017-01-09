@@ -1,9 +1,9 @@
 {
-  "port": 80,
+  "port": 8080,
 
   "webservice": {
     "database": "mongodb://admin:L1ttleF0rest!@ds159348.mlab.com:59348/socialreportdev",
     "host": "127.0.0.1",
-    "port": 8080
+    "port": 8081
   }
 }
