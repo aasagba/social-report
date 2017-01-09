@@ -83,7 +83,7 @@ function initApp (config, callback) {
         exit();
     });
 
-    app.server.listen(config.port || 7000, function (err) {
+    app.server.listen(process.env.PORT || config.port, function (err) {
         var address = app.server.address();
         app.address = 'http://' + address.address + ':' + address.port;
         callback(err, app);
