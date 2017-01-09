@@ -48,8 +48,8 @@ $(document).ready(function() {
     };
 
     // have we declared a custom legend
-    //console.log("Legend Length: " + legend.prevObject.length);
-    //console.log(JSON.stringify(legend));
+    console.log("Legend Length: " + legend.prevObject.length);
+    console.log(JSON.stringify(legend));
     if (legend.prevObject.length === 1) {
         $('body').addClass('custom-legend');
     }

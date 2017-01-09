@@ -22,14 +22,20 @@ function helper (register) {
 
     });
 
-    register('datesubstring', function (date) {
+    register('dateFormat', function (date) {
+        console.log("date before: " + JSON.stringify(date));
+        var dateObj = new Date(date);
 
-        var dateFormatted = date.substring(0, 10);
-        console.log(dateFormatted);
-        dateFormatted.concat(date.substring(25, 4));
-        console.log(dateFormatted);
+        var day = ("0" + dateObj.getDate()).slice(-2);
+        var month = ("0" + (dateObj.getMonth() + 1)).slice(-2);
+        var year = dateObj.getFullYear();
+
+        var dateFormatted = day + "/" + month + "/" + year;
+        console.log("dateFormatted: " + dateFormatted);
+
         return dateFormatted;
 
+        //return dateObj.toDateString();
     });
 
     // Format a date with Moment

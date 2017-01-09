@@ -2,7 +2,7 @@
   "port": 7000,
 
   "webservice": {
-    "database": "mongodb://localhost/social-report-dev",
+    "database": "mongodb://localhost/socialreportdev",
     "host": "127.0.0.1",
     "port": 8000
   }

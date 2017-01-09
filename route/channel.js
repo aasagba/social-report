@@ -34,39 +34,43 @@ function route (app) {
 
 
     // Get Post Timeline
-    app.express.get('/posts/account/:account', function (req, res, next) {
+    app.express.get('/posts/account/:account/id/:id', function (req, res, next) {
         console.log("in /posts/account/:account");
+        var id = req.params.id;
         var account = req.params.account;
-        console.log("account: " + account);
 
-        //app.webservice.posts(account).get({channel: channel, client: account}, function (err, posts) {
-        app.webservice.accounts.posts({account: account}, function (err, posts) {
+        console.log("account: " + account);
+        console.log("id: " + id);
+
+        app.webservice.accounts.posts({account: id}, function (err, posts) {
             console.log("posts from webservice: ");
             console.log(posts.length);
 
             res.render('user/posts', {
                 count: posts.length,
                 posts: posts,
-                channel: "twitter"
+                channel: "twitter",
+                account: account,
+                isDetailsPage: true,
             });
         });
 
         //twitterClient.twitterStatusesAsync(action, options).then(twitterClient.getMaxHistory);
         /*twitterClient.getPostTimeline(action, options).then(function (posts) {
-            console.log("resolved postTimeline");
-            console.log(posts.length);
+         console.log("resolved postTimeline");
+         console.log(posts.length);
 
-            res.render('user/posts', {
-                count: posts.length,
-                posts: posts,
-                channel: channel
-            });
-        });*/
+         res.render('user/posts', {
+         count: posts.length,
+         posts: posts,
+         channel: channel
+         });
+         });*/
     });
 
     // Run User Lookup service
     app.express.get('/run/user/:client', function (req, res, next) {
-       var client = req.params.client;
+        var client = req.params.client;
 
         app.webservice.users.run({client: client}, function (err, result) {
             if (err) {
@@ -92,23 +96,23 @@ function route (app) {
 
         // gets user accounts from users collection
         /*app.webservice.users.get({client: user, channel: channel}, function (err, user) {
-            console.log("users from webservice: ");
-            console.log(user.length);
+         console.log("users from webservice: ");
+         console.log(user.length);
 
 
-            //app.webservice.user()
+         //app.webservice.user()
 
-            res.render('user/user', {
-                count: user.length,
-                users: user,
-                channel: channel
-            });
-        });*/
+         res.render('user/user', {
+         count: user.length,
+         users: user,
+         channel: channel
+         });
+         });*/
 
         app.webservice.accounts.get({client: client}, function (err, users) {
-           if (err) {
-               return next(err);
-           }
+            if (err) {
+                return next(err);
+            }
 
             var preparedResults = [];
             preparedResults = users.map(getLatestResultById);
@@ -131,8 +135,8 @@ function route (app) {
         });
 
         // NEED TO WRITE CODE TO GET USER LOOKUP VIA /USER/RESULTS
-/**********
-        app.webservice.users.get({client: client}, function (err, users) {
+        /**********
+         app.webservice.users.get({client: client}, function (err, users) {
             console.log("Got " + users.length + " Users from Webservice for the " + channel + " channel.");
 
             console.log(JSON.stringify(users));
@@ -144,66 +148,70 @@ function route (app) {
                 client: client
             });
         });
-***********/
+         ***********/
         // MAYBE REPLACE LOGIC ABOVE AS DONT NEED TO GET LIST OF USERS
 
         /*
-        switch (channel) {
-            case "twitter":
-                // get users, hardcode for now
-                var users = ['BSI_UK', 'BSI_France', 'BSI_AustraliaNZ', 'BSI_Brazil'];
+         switch (channel) {
+         case "twitter":
+         // get users, hardcode for now
+         var users = ['BSI_UK', 'BSI_France', 'BSI_AustraliaNZ', 'BSI_Brazil'];
 
-                // perform user lookup
-                userInfo = users.map(twitterClient.userLookup);
+         // perform user lookup
+         userInfo = users.map(twitterClient.userLookup);
 
-                break;
-            case "facebook":
+         break;
+         case "facebook":
 
-                break;
-            case "linkedin":
+         break;
+         case "linkedin":
 
-                break;
-            default:
+         break;
+         default:
 
-        }
+         }
 
 
-        Promise.all(userInfo).then(function (userInfo) {
-            res.render('user/user', {
-                count: userInfo.length,
-                users: userInfo,
-                channel: channel
-            });
-        });*/
+         Promise.all(userInfo).then(function (userInfo) {
+         res.render('user/user', {
+         count: userInfo.length,
+         users: userInfo,
+         channel: channel
+         });
+         });*/
     });
 
     // Get followers
-    app.express.get('/followers/channel/:channel/account/:account', function (req, res, next) {
-        var account = req.params.account;
+    app.express.get('/followers/channel/:channel/account/:account/id/:id', function (req, res, next) {
+        var id = req.params.id;
         var channel = req.params.channel;
+        var account = req.params.account;
         console.log("in followers");
-        app.webservice.accounts.followers({account: account}, function (err, followers) {
+
+        app.webservice.accounts.followers({account: id}, function (err, followers) {
             if (err) {
                 return next(err);
             }
-            console.log("User Stats: " + JSON.stringify(userResults));
+            //console.log("User Stats: " + JSON.stringify(userResults));
 
             res.render('user/followers', {
                 count: followers.length,
                 followers: followers,
                 hasOneResult: (followers.length < 2),
-                userStats: userResults,
+                //userStats: userResults,
                 isDetailsPage: true,
                 channel: channel,
+                account: account
             });
         });
     });
 
     // Get friends
-    app.express.get('/friends/account/:account', function (req, res, next) {
+    app.express.get('/friends/account/:account/id/:id', function (req, res, next) {
+        var id = req.params.id;
         var account = req.params.account;
 
-        app.webservice.accounts.friends({account: account}, function (err, friends) {
+        app.webservice.accounts.friends({account: id}, function (err, friends) {
             if (err) {
                 return next(err);
             }
@@ -212,15 +220,17 @@ function route (app) {
             res.render('user/friends', {
                 count: friends.length,
                 friends: friends,
-                isDetailsPage: true
+                isDetailsPage: true,
+                account: account
             });
         });
     });
 
 
     // Get stats
-    app.express.get('/stats/client/:client', function (req, res, next) {
+    app.express.get('/stats/channel/:channel/client/:client', function (req, res, next) {
         var client = req.params.client;
+        var channel = req.params.channel;
 
         app.webservice.users.get({client: client}, function (err, users) {
             console.log("Got " + users.length);
@@ -234,17 +244,8 @@ function route (app) {
                 var preparedResults = [];
                 preparedResults = account.map(getLatestResultById);
 
-
-                /*res.render('user/stats', {
-                    count: users.length,
-                    results: users,
-                    hasOneResult: (users.length < 2),
-                    client: client
-                });*/
-
-
                 Promise.all(preparedResults).then(function (preparedResults) {
-                    //console.log("Prepared Results: " + JSON.stringify(preparedResults));
+                    console.log("Prepared Results: " + JSON.stringify(preparedResults));
                     //console.log("Length: " + preparedResults.length);
                     // save results globally to use for graphs
                     userResults = preparedResults;
@@ -254,8 +255,11 @@ function route (app) {
                         results: users,
                         hasOneResult: (users.length < 2),
                         client: client,
+                        channel: channel,
                         //count: preparedResults.length,
-                        lastestResults: preparedResults,
+                        latestResults: preparedResults,
+                        isStatsPage: true,
+                        isDetailsPage: false
                     });
                 });
             });

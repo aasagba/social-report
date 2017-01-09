@@ -21,14 +21,14 @@
     <tbody>
     {{#each users}}
     <tr>
-        <td class="name"><a href="/stats/client/{{last_result.screen_name}}">{{last_result.name}}</a></td>
+        <td class="name"><a href="/stats/channel/{{channel}}/client/{{last_result.screen_name}}">{{last_result.name}}</a></td>
         <td class="location">{{last_result.location}}</td>
-        <td class="score"><a href="/stats/client/{{last_result.screen_name}}">{{last_result.followers_count}}</a></td>
-        <td class="score"><a href="/stats/client/{{last_result.screen_name}}">{{last_result.friends_count}}</a></td>
-        <td class="score"><a href="/stats/client/{{last_result.screen_name}}">{{last_result.favourites_count}}</a></td>
-        <td class="score"><a href="/stats/client/{{last_result.screen_name}}">{{last_result.statuses_count}}</a></td>
+        <td class="score"><a href="/stats/channel/{{channel}}/client/{{last_result.screen_name}}">{{last_result.followers_count}}</a></td>
+        <td class="score"><a href="/stats/channel/{{channel}}/client/{{last_result.screen_name}}">{{last_result.friends_count}}</a></td>
+        <td class="score"><a href="/stats/channel/{{channel}}/client/{{last_result.screen_name}}">{{last_result.favourites_count}}</a></td>
+        <td class="score"><a href="/stats/channel/{{channel}}/client/{{last_result.screen_name}}">{{last_result.statuses_count}}</a></td>
         <td class="post">{{last_result.latest_status}}</td>
-        <td class="post-date">{{datesubstring last_result.latest_status_date}}</td>
+        <td class="post-date">{{dateFormat last_result.latest_status_date}}</td>
         <!--<td class="date">{{last_result.date}}</td>-->
         <td class="date">{{days-since last_result.date}} days ago</td>
     </tr>
