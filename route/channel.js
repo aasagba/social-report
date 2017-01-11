@@ -25,6 +25,13 @@ function route (app) {
                     console.log("results returned: " + JSON.stringify(results));
                     console.log("number results: " + results.length);
                     user.last_result = results[0];
+                    user.previous_result = results[1]; // CHANGE THIS BACK TO results[1] AFTER TESTING!!!!!!!!!!!
+                    user.followersChange = user.last_result.followers_count - user.previous_result.followers_count;
+                    user.friendsChange = user.last_result.friends_count - user.previous_result.friends_count;
+                    user.postsChange = user.last_result.statuses_count - user.previous_result.statuses_count;
+
+                    console.log("last result: " + JSON.stringify(user.last_result));
+                    //console.log("first result: " + JSON.stringify(results[results.length-1]));
                 }
 
                 resolve(user);
@@ -45,14 +52,17 @@ function route (app) {
         app.webservice.accounts.posts({account: id}, function (err, posts) {
             console.log("posts from webservice: ");
             console.log(posts.length);
+            console.log(JSON.stringify(posts));
+            var data = posts[0].account.preparedPosts;
 
-            res.render('user/posts', {
-                count: posts.length,
-                posts: posts,
-                channel: "twitter",
-                account: account,
-                isDetailsPage: true,
-            });
+                res.render('user/posts', {
+                    count: data.length,
+                    posts: data,
+                    channel: "twitter",
+                    account: account,
+                    isDetailsPage: true,
+                });
+
         });
 
         //twitterClient.twitterStatusesAsync(action, options).then(twitterClient.getMaxHistory);
@@ -116,8 +126,9 @@ function route (app) {
 
             var preparedResults = [];
             preparedResults = users.map(getLatestResultById);
-
-
+            console.log("preparedResults: " + JSON.stringify(preparedResults));
+            //var followersChange = preparedResults.last_result.followers_count - preparedResults.previous_result.followers_count;
+            //console.log("FollowersChange: " + followersChange);
 
             Promise.all(preparedResults).then(function (preparedResults) {
                 console.log("Prepared Results: " + JSON.stringify(preparedResults));
@@ -192,12 +203,13 @@ function route (app) {
             if (err) {
                 return next(err);
             }
+            var data = followers[0].account.followers;
             //console.log("User Stats: " + JSON.stringify(userResults));
 
             res.render('user/followers', {
-                count: followers.length,
-                followers: followers,
-                hasOneResult: (followers.length < 2),
+                count: data.length,
+                followers: data,
+                hasOneResult: (data.length < 2),
                 //userStats: userResults,
                 isDetailsPage: true,
                 channel: channel,
@@ -207,21 +219,24 @@ function route (app) {
     });
 
     // Get friends
-    app.express.get('/friends/account/:account/id/:id', function (req, res, next) {
+    app.express.get('/friends/channel/:channel/account/:account/id/:id', function (req, res, next) {
         var id = req.params.id;
         var account = req.params.account;
+        var channel = req.params.channel;
 
         app.webservice.accounts.friends({account: id}, function (err, friends) {
             if (err) {
                 return next(err);
             }
-            console.log("Friends: " + JSON.stringify(friends));
+            //console.log("Friends: " + JSON.stringify(friends));
+            var data = friends[0].account.friends;
 
             res.render('user/friends', {
-                count: friends.length,
-                friends: friends,
+                count: data.length,
+                friends: data,
                 isDetailsPage: true,
-                account: account
+                account: account,
+                channel: channel,
             });
         });
     });

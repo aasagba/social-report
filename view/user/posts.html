@@ -1,13 +1,29 @@
 {{#content "title"}}{{channel}}{{/content}}
 
 <h1 class="account-lookup-title">Posts - {{account}}</h1>
-<p>{{channel}} posts - <b>{{count}}</b></p>
 
-{{#each posts}}
-<div class="post-container">
-    {{{text}}}
-</div>
-{{/each}}
+<table id="posts" name="posts" class="">
+    <thead>
+    <tr>
+        <th>Post</th>
+        <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+        {{#each posts}}
+            <tr>
+                <td>{{text}}</td>
+                <td>{{dateFormat date}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<script>
+    $(document).ready(function() {
+        $('#posts').dataTable();
+    });
+</script>
 
 <style>
     .post-container {

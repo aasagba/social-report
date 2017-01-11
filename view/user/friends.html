@@ -1,7 +1,6 @@
 <h1 class="account-lookup-title">Friends - {{account}}</h1>
-<p>friends - <b>{{count}}</b></p>
 
-<table id="" name="" class="">
+<table id="friends" name="friends" class="">
     <thead>
     <tr>
         <th>Name</th>
@@ -23,3 +22,9 @@
     {{/each}}
     </tbody>
 </table>
+
+<script>
+    $(document).ready(function() {
+        $('#friends').dataTable();
+    });
+</script>

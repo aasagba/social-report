@@ -9,6 +9,7 @@
   "homepage": "https://github.com/aasagba/social-report",
   "private": true,
   "dependencies": {
-    "Flot": "flot#^0.8.3"
+    "Flot": "flot#^0.8.3",
+    "datatables.net": "^1.10.13"
   }
 }

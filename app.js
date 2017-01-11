@@ -53,6 +53,7 @@ function initApp (config, callback) {
     // View helpers
     require('./view/helper/string')(hbs.registerHelper);
     require('./view/helper/date')(hbs.registerHelper);
+    require('./view/helper/number')(hbs.registerHelper);
 
     // Populate view locals
     app.express.locals = {

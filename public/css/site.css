@@ -7,6 +7,17 @@
     visibility: hidden!important
 }
 
+.up a i, span.up{
+    color: green;
+    font-size: 0.8em;
+}
+.down a i, span.down {
+    color: red;
+    font-size: 0.8em;
+}
+.nochange a i, span.nochange {
+    font-size: 0.8em;
+}
 .account-lookup-title {
     color: #34495e;
     border-color: #34495e;
@@ -54,6 +65,7 @@ table.account-lookup tbody tr td.score a, table.account-lookup tbody tr td.score
     color: #34495e;
     text-align: center;
     text-decoration: none;
+    min-width: 110px;
 }
 table.account-lookup tbody tr td.post {
     color: #b6b6b6;

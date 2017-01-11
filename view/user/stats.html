@@ -5,7 +5,7 @@
 {{#if results}}
 
 {{#unless hasOneResult}}
-
+<script type="text/javascript" src="/js/site.js"></script>
 {{> graph}}
 {{/unless}}
 
@@ -28,10 +28,10 @@
     <tr>
         <td class="name"><a href="#">{{last_result.name}}</a></td>
         <td class="location">{{last_result.location}}</td>
-        <td class="score"><a href="/followers/channel/{{channel}}/account/{{last_result.screen_name}}/id/{{last_result.account}}">{{last_result.followers_count}}</a></td>
-        <td class="score"><a href="/friends/account/{{last_result.screen_name}}/id/{{last_result.account}}">{{last_result.friends_count}}</a></td>
+        <td class="score {{trend followersChange}}"><a href="/followers/channel/{{channel}}/account/{{last_result.screen_name}}/id/{{last_result.account}}"><span>{{last_result.followers_count}}<i class="fa {{trendarrow followersChange}}" aria-hidden="true"></i><span class="{{trend followersChange}}">{{formatchange followersChange}}</span></span></a></td>
+        <td class="score {{trend friendsChange}}"><a href="/friends/channel/{{channel}}/account/{{last_result.screen_name}}/id/{{last_result.account}}"><span>{{last_result.friends_count}}<i class="fa {{trendarrow friendsChange}}" aria-hidden="true"></i><span class="{{trend friendsChange}}">{{formatchange friendsChange}}</span></span></a></td>
         <td class="score"><a href="#">{{last_result.favourites_count}}</a></td>
-        <td class="score"><a href="/posts/account/{{last_result.screen_name}}/id/{{last_result.account}}">{{last_result.statuses_count}}</a></td>
+        <td class="score {{trend postsChange}}"><a href="/posts/account/{{last_result.screen_name}}/id/{{last_result.account}}"><span>{{last_result.statuses_count}}<i class="fa {{trendarrow postsChange}}" aria-hidden="true"></i><span class="{{trend postsChange}}">{{formatchange postsChange}}</span></span></a></td>
         <td class="post">{{last_result.latest_status}}</td>
         <td class="post-date">{{dateFormat last_result.latest_status_date}}</td>
         <!--<td class="date">{{last_result.date}}</td>-->
