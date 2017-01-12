@@ -10,10 +10,10 @@
             <h3>The UK’s national standards body & the business standards company providing services in knowledge… http://bit.ly/BSI-Webpage</h3>
         </div>
         <div class="info">
-            <div class="scores"><span class="score">{{totalScores.followers}}</span><span class="label">TOTAL FOLLOWERS</span></div>
-            <div class="scores"><span class="score">{{totalScores.friends}}</span><span class="label">TOTAL FRIENDS</span></div>
-            <div class="scores"><span class="score">{{totalScores.favourites}}</span><span class="label">TOTAL FAVOURITES</span></div>
-            <div class="scores"><span class="score">{{totalScores.posts}}</span><span class="label">TOTAL POSTS</span></div>
+            <div class="scores"><div class="score">{{totalScores.followers}}</div><span class="label">TOTAL FOLLOWERS</span></div>
+            <div class="scores"><div class="score">{{totalScores.friends}}</div><span class="label">TOTAL FRIENDS</span></div>
+            <div class="scores"><div class="score">{{totalScores.favourites}}</div><span class="label">TOTAL FAVOURITES</span></div>
+            <div class="scores"><div class="score">{{totalScores.posts}}</div><span class="label">TOTAL POSTS</span></div>
         </div>
     </div>
     <h2 class="account-stats-title">Social Account Statistics</h2>
@@ -24,17 +24,30 @@
             <i class="fa fa-{{lowercase channel}}-square" aria-hidden="true"></i>
         </div>
         <div class="info">
-            <div class="scores"><span class="score">{{scores.followers}}</span><span class="label">FOLLOWERS</span></div>
-            <div class="scores"><span class="score">{{scores.friends}}</span><span class="label">FRIENDS</span></div>
-            <div class="scores"><span class="score">{{scores.favourites}}</span><span class="label">FAVOURITES</span></div>
-            <div class="scores"><span class="score">{{scores.posts}}</span><span class="label">POSTS</span></div>
+            <div class="scores"><div class="score {{trend scores.followers_change}}"><div class="count">{{scores.followers}} </div><div class="trendpanel"><i class="hometrend fa {{trendarrow scores.followers_change}}" aria-hidden="true"></i> <span class="hometrend {{trend scores.followers_change}}">{{formatchange scores.followers_change}}</span></div><div class="label">FOLLOWERS</div></div></div>
+            <div class="scores"><div class="score {{trend scores.friends_change}}"><div class="count">{{scores.friends}} </div><div class="trendpanel"><i class="hometrend fa {{trendarrow scores.friends_change}}" aria-hidden="true"></i> <span class="hometrend {{trend scores.friends_change}}">{{formatchange scores.friends_change}}</span></div><span class="label">FRIENDS</span></div></div>
+            <div class="scores"><div class="score {{trend scores.favourites_change}}"><div class="count">{{scores.favourites}} </div><div class="trendpanel"><i class="hometrend fa {{trendarrow scores.favourites_change}}" aria-hidden="true"></i> <span class="hometrend {{trend scores.favourites_change}}">{{formatchange scores.favourites_change}}</span></div><span class="label">FAVOURITES</span></div></div>
+            <div class="scores"><div class="score {{trend scores.posts_change}}"><div class="count">{{scores.posts}} </div><div class="trendpanel"><i class="hometrend fa {{trendarrow scores.posts_change}}" aria-hidden="true"></i> <span class="hometrend {{trend scores.posts_change}}">{{formatchange scores.posts_change}}</span></div><span class="label">POSTS</span></div></div>
         </div>
     </div>
 
     {{/each}}
 </div>
-
+<!--<div class="trendpanel">-->
 <style>
+
+    .home-container .panel .info .scores .score .hometrend {
+        font-size: 0.7em;
+    }
+    .home-container .panel .info .scores .score .trendpanel {
+        width: 70px;
+        display: inline-block;
+        text-align: right;
+    }
+    .count {
+        float: left;
+        width: 74%;
+    }
     .home-container {
         /*padding: 10px 0 0 0;*/
     }
@@ -126,18 +139,19 @@
         width: 229px;
         text-align: center;
     }
-    .home-container .panel .info .scores span.score, .total-panel .info .scores span.score {
+    .home-container .panel .info .scores .score, .total-panel .info .scores .score {
         font-size: 40px;
         font-family: sans-serif;
     }
     .home-container .panel .info .scores span, .total-panel .info .scores span {
         clear: both;
-        display: block;
+        /*display: block;*/
     }
-    .home-container .panel .info .scores span.label, .total-panel .info .scores span.label {
+    .home-container .panel .info .scores .label, .total-panel .info .scores .label {
         color: #999;
-        font-size: .9em;
+        font-size: 15px;
         font-weight: 500;
+        display: block;
     }
 
 </style>

@@ -25,9 +25,10 @@ function route (app) {
                     console.log("results returned: " + JSON.stringify(results));
                     console.log("number results: " + results.length);
                     user.last_result = results[0];
-                    user.previous_result = results[1]; // CHANGE THIS BACK TO results[1] AFTER TESTING!!!!!!!!!!!
+                    user.previous_result = results[10]; // CHANGE THIS BACK TO results[1] AFTER TESTING!!!!!!!!!!!
                     user.followersChange = user.last_result.followers_count - user.previous_result.followers_count;
                     user.friendsChange = user.last_result.friends_count - user.previous_result.friends_count;
+                    user.favouritesChange = user.last_result.favourites_count - user.previous_result.favourites_count;
                     user.postsChange = user.last_result.statuses_count - user.previous_result.statuses_count;
 
                     console.log("last result: " + JSON.stringify(user.last_result));

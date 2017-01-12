@@ -20,20 +20,29 @@ function route (app) {
                     //console.log("results returned: " + JSON.stringify(results));
                     //console.log("number results: " + results.length);
                     user.last_result = results[0];
+                    user.previous_result = results[10];
+                    user.followersChange = user.last_result.followers_count - user.previous_result.followers_count;
+                    user.friendsChange = user.last_result.friends_count - user.previous_result.friends_count;
+                    user.favouritesChange = user.last_result.favourites_count - user.previous_result.favourites_count;
+                    user.postsChange = user.last_result.statuses_count - user.previous_result.statuses_count;
 
                     switch (user.last_result.channel) {
                         case "twitter":
                             console.log("Twitter account found: " + user.last_result.followers_count);
                             globalScores.twitter.followers += user.last_result.followers_count;
+                            globalScores.twitter.followers_change = user.followersChange;
                             globalScores.twitter.friends += user.last_result.friends_count;
+                            globalScores.twitter.friends_change = user.friendsChange;
                             globalScores.twitter.favourites += user.last_result.favourites_count;
+                            globalScores.twitter.favourites_change = user.favouritesChange;
                             globalScores.twitter.posts += user.last_result.statuses_count;
+                            globalScores.twitter.posts_change += user.postsChange;
                             break;
                         default :
                     }
                 }
 
-                resolve(user.last_result);
+                resolve(user);
             });
         });
     };
@@ -44,9 +53,13 @@ function route (app) {
         globalScores = {
             twitter: {
                 followers: 0,
+                followers_change: 0,
                 friends: 0,
+                friends_change: 0,
                 favourites: 0,
-                posts: 0
+                favourites_change: 0,
+                posts: 0,
+                posts_change: 0
             },
             facebook: {
                 followers: 0,
@@ -106,7 +119,6 @@ function route (app) {
                         }
                     ],
                     totalScores: globalScores.total
-
                 });
             });
         });

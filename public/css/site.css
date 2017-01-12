@@ -7,15 +7,15 @@
     visibility: hidden!important
 }
 
-.up a i, span.up{
+.up a i, .up i, span.up{
     color: green;
     font-size: 0.8em;
 }
-.down a i, span.down {
+.down a i, .down i, span.down {
     color: red;
     font-size: 0.8em;
 }
-.nochange a i, span.nochange {
+.nochange a i, .nochange i, span.nochange {
     font-size: 0.8em;
 }
 .account-lookup-title {
