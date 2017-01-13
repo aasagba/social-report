@@ -9,6 +9,11 @@ function helper (register) {
        return context.toLowerCase();
     });
 
+    // convert a string to upper-case
+    register('uppercase', function (context) {
+        return context.toUpperCase();
+    });
+
     register('trend', function (context) {
 
         if (context < 0) {

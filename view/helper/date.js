@@ -24,15 +24,19 @@ function helper (register) {
 
     register('dateFormat', function (date) {
         console.log("date before: " + JSON.stringify(date));
-        var dateObj = new Date(date);
 
-        var day = ("0" + dateObj.getDate()).slice(-2);
-        var month = ("0" + (dateObj.getMonth() + 1)).slice(-2);
-        var year = dateObj.getFullYear();
+        if (date != undefined) {
+            var dateObj = new Date(date);
 
-        var dateFormatted = day + "/" + month + "/" + year;
-        console.log("dateFormatted: " + dateFormatted);
+            var day = ("0" + dateObj.getDate()).slice(-2);
+            var month = ("0" + (dateObj.getMonth() + 1)).slice(-2);
+            var year = dateObj.getFullYear();
 
+            var dateFormatted = day + "/" + month + "/" + year;
+            console.log("dateFormatted: " + dateFormatted);
+        } else {
+            var dateFormatted = "-";
+        }
         return dateFormatted;
 
         //return dateObj.toDateString();
