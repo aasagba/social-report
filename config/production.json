@@ -2,7 +2,7 @@
   "port": 7000,
 
   "webservice": {
-    "database": "mongodb://188.166.146.12/socialreportdev",
+    "database": "mongodb://188.166.146.12/socialreport",
     "host": "127.0.0.1",
     "port": 8000,
     "cron": "0 6 1 * *"
