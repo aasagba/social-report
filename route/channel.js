@@ -16,7 +16,7 @@ function route (app) {
     var getLatestResultById = function (user,index) {
         console.log("in getResultById");
         return new Promise(function(resolve, reject) {
-            //model.result.getByTaskId(task.id, {}, function (err, results) {
+            //model.result.getByTaskId(jobs.id, {}, function (err, results) {
             app.webservice.user(user._id).results({}, function (err, results) {
                 //console.log("model.result.getByTaskId");
 

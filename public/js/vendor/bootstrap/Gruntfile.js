@@ -174,10 +174,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jekyll');
   grunt.loadNpmTasks('grunt-recess');
 
-  // Docs HTML validation task
+  // Docs HTML validation jobs
   grunt.registerTask('validate-html', ['jekyll', 'validation']);
 
-  // Test task.
+  // Test jobs.
   var testSubtasks = ['dist-css', 'jshint', 'qunit', 'validate-html'];
   // Only run BrowserStack tests under Travis
   if (process.env.TRAVIS) {
@@ -188,22 +188,22 @@ module.exports = function(grunt) {
   }
   grunt.registerTask('test', testSubtasks);
 
-  // JS distribution task.
+  // JS distribution jobs.
   grunt.registerTask('dist-js', ['concat', 'uglify']);
 
-  // CSS distribution task.
+  // CSS distribution jobs.
   grunt.registerTask('dist-css', ['recess']);
 
-  // Fonts distribution task.
+  // Fonts distribution jobs.
   grunt.registerTask('dist-fonts', ['copy']);
 
-  // Full distribution task.
+  // Full distribution jobs.
   grunt.registerTask('dist', ['clean', 'dist-css', 'dist-fonts', 'dist-js']);
 
-  // Default task.
+  // Default jobs.
   grunt.registerTask('default', ['test', 'dist', 'build-customizer']);
 
-  // task for building customizer
+  // jobs for building customizer
   grunt.registerTask('build-customizer', 'Add scripts/less files to customizer.', function () {
     var fs = require('fs')
 
