@@ -28,6 +28,10 @@ function client (root) {
 
             posts: function (query, done) {
                 get(root + 'posts', query, done);
+            },
+
+            favourites: function (query, done) {
+                get(root + 'favourites', query, done);
             }
 
         },

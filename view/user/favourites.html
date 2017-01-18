@@ -1,0 +1,36 @@
+{{#content "title"}}{{channel}}{{/content}}
+
+<h1 class="account-lookup-title">Favourites - {{account}}</h1>
+
+<table id="favourites" name="favourites" class="">
+    <thead>
+    <tr>
+        <th>Favourite</th>
+        <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+        {{#each favourites}}
+            <tr>
+                <td>{{text}}</td>
+                <td>{{dateFormat date}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<script>
+    $(document).ready(function() {
+        $('#favourites').dataTable();
+    });
+</script>
+
+<style>
+    .post-container {
+        display: inline-block;
+        margin: 5px;
+        border: solid 1px lightgray;
+        width: 42%;
+        min-height: 40px;
+    }
+</style>

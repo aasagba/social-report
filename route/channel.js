@@ -54,6 +54,30 @@ function route (app) {
         });
     };
 
+    // Get Favourites
+    app.express.get('/favourites/channel/:channel/client/:client/account/:account/id/:id', function (req, res, next) {
+        var id = req.params.id;
+        var channel = req.params.channel;
+        var client = req.params.client;
+        var account = req.params.account;
+
+        app.webservice.accounts.favourites({account: id}, function (err, favourites) {
+            console.log("favourites from webservice: ");
+            console.log(favourites.length);
+            console.log(JSON.stringify(favourites));
+            var data = favourites[0].account.favourites;
+
+            res.render('user/favourites', {
+                count: data.length,
+                favourites: data,
+                isDetailsPage: true,
+                channel: channel,
+                client: client,
+                account: account
+            });
+        });
+    });
+
 
     // Get Post Timeline
     app.express.get('/posts/channel/:channel/client/:client/account/:account/id/:id', function (req, res, next) {
