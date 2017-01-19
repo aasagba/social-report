@@ -190,51 +190,6 @@ function route (app) {
             });
         });
 
-        // NEED TO WRITE CODE TO GET USER LOOKUP VIA /USER/RESULTS
-        /**********
-         app.webservice.users.get({client: client}, function (err, users) {
-            console.log("Got " + users.length + " Users from Webservice for the " + channel + " channel.");
-
-            console.log(JSON.stringify(users));
-
-            res.render('user/user', {
-                count: users.length,
-                users: users,
-                channel: channel,
-                client: client
-            });
-        });
-         ***********/
-        // MAYBE REPLACE LOGIC ABOVE AS DONT NEED TO GET LIST OF USERS
-
-        /*
-         switch (channel) {
-         case "twitter":
-         // get users, hardcode for now
-         var users = ['BSI_UK', 'BSI_France', 'BSI_AustraliaNZ', 'BSI_Brazil'];
-
-         // perform user lookup
-         userInfo = users.map(twitterClient.userLookup);
-
-         break;
-         case "facebook":
-
-         break;
-         case "linkedin":
-
-         break;
-         default:
-
-         }
-
-
-         Promise.all(userInfo).then(function (userInfo) {
-         res.render('user/user', {
-         count: userInfo.length,
-         users: userInfo,
-         channel: channel
-         });
-         });*/
     });
 
     // Get followers
