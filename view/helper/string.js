@@ -39,25 +39,8 @@ function helper (register) {
     });
 
     register('flag', function (context, context2) {
-        console.log("context: " + context);
-        console.log("context2: " + context2);
-/*
-        var countries = ["UK","Brazil","France","Australia", "Spain", "España", "Jordan"];
-        var url = "http://lfi.littleforest.co.uk/crawler/images/";
-
-        countries.forEach(function (country) {
-            if (context.indexOf(country) !== -1) {
-                return url + country;
-            }
-        });*/
-
-        /*var countryMap = new Map();
-        countryMap.set("UK", "http://lfi.littleforest.co.uk/crawler/images/uk%20flag.png");
-        countryMap.set("Brazil", "http://lfi.littleforest.co.uk/crawler/images/br%20flag.png");
-        countryMap.set("France", "http://lfi.littleforest.co.uk/crawler/images/fr%20flag.png");
-        countryMap.set("Australia", "http://lfi.littleforest.co.uk/crawler/images/au%20flag.png");
-        countryMap.set("Spain", "http://lfi.littleforest.co.uk/crawler/images/es%20flag.png");
-        countryMap.set("España", "http://lfi.littleforest.co.uk/crawler/images/es%20flag.png");*/
+        //console.log("context: " + context);
+        //console.log("context2: " + context2);
 
         var countries = [
             {country: "UK", url: "http://lfi.littleforest.co.uk/crawler/images/uk%20flag.png"},
@@ -90,13 +73,6 @@ function helper (register) {
             {country: "America", url: "http://lfi.littleforest.co.uk/crawler/images/us%20flag.png"},
             {country: "US", url: "http://lfi.littleforest.co.uk/crawler/images/us%20flag.png"}
         ];
-
-        /*map.forEach(function(value, key) {
-            console.log(key + " = " + value);
-            if (context.indexOf(key) !== -1) {
-                return url + value;
-            }
-        });*/
 
         var i = 0;
         var length = countries.length;
