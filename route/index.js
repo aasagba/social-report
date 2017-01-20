@@ -95,7 +95,7 @@ function route (app) {
             }
 
             var results = users.map(processScores);
-
+            var clientName = users[0].name;
             Promise.all(results).then(function (data) {
 
                 globalScores.total.favourites += sum(globalScores.twitter.favourites,
@@ -109,7 +109,7 @@ function route (app) {
 
                 console.log(JSON.stringify(globalScores));
                 res.render('index', {
-                    client: client,
+                    client: clientName,
                     channels: [
                         {
                             client: client,
