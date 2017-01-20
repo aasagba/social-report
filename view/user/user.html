@@ -22,7 +22,7 @@
     {{#each users}}
     <tr>
         <td class="name"><a href="/stats/channel/{{channel}}/client/{{client}}/account/{{last_result.screen_name}}">{{last_result.name}}</a></td>
-        <td class="location"><img src="{{flag last_result.screen_name}}" height="55px" width="84px" alt="{{last_result.location}}"></td>
+        <td class="location"><a href="/stats/channel/{{channel}}/client/{{client}}/account/{{last_result.screen_name}}"><img src="{{flag last_result.location last_result.screen_name}}" height="55px" width="84px" alt="{{last_result.location}}"></a></td>
         <td class="score {{trend followersChange}}"><a href="/stats/channel/{{channel}}/client/{{client}}/account/{{last_result.screen_name}}"><span>{{last_result.followers_count}} <i class="fa {{trendarrow followersChange}}" aria-hidden="true"></i><span class="{{trend followersChange}}">{{formatchange followersChange}}</span></span></a></td>
         <td class="score {{trend friendsChange}}"><a href="/stats/channel/{{channel}}/client/{{client}}/account/{{last_result.screen_name}}"><span>{{last_result.friends_count}} <i class="fa {{trendarrow friendsChange}}" aria-hidden="true"></i><span class="{{trend friendsChange}}">{{formatchange friendsChange}}</span></span></a></td>
         <td class="score {{trend favouritesChange}}"><a href="/stats/channel/{{channel}}/client/{{client}}/account/{{last_result.screen_name}}"><span>{{last_result.favourites_count}}<i class="fa {{trendarrow favouritesChange}}" aria-hidden="true"></i><span class="{{trend favouritesChange}}">{{formatchange favouritesChange}}</span></span></a></td>

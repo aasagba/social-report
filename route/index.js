@@ -21,6 +21,7 @@ function route (app) {
                     //console.log("number results: " + results.length);
                     var length = results.length;
                     user.last_result = results[0];
+                    console.log("user.last_result: " + JSON.stringify(results[0]));
 
                     if(length > 1) {
                         user.previous_result = results[1];
