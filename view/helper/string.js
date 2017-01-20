@@ -64,7 +64,26 @@ function helper (register) {
             {country: "Australia", url: "http://lfi.littleforest.co.uk/crawler/images/au%20flag.png"},
             {country: "Spain", url:  "http://lfi.littleforest.co.uk/crawler/images/es%20flag.png"},
             {country: "España", url: "http://lfi.littleforest.co.uk/crawler/images/es%20flag.png"},
-            {country: "Paris", url: "http://lfi.littleforest.co.uk/crawler/images/fr%20flag.png"}
+            {country: "Iberia", url: "http://lfi.littleforest.co.uk/crawler/images/es%20flag.png"},
+            {country: "Barcelona", url: "http://lfi.littleforest.co.uk/crawler/images/es%20flag.png"},
+            {country: "Paris", url: "http://lfi.littleforest.co.uk/crawler/images/fr%20flag.png"},
+            {country: "Canada", url: "http://lfi.littleforest.co.uk/crawler/images/ca%20flag.png"},
+            {country: "India", url: "http://lfi.littleforest.co.uk/crawler/images/in%20flag.png"},
+            {country: "Italy", url: "http://lfi.littleforest.co.uk/crawler/images/it%20flag.png"},
+            {country: "Japan", url: "http://lfi.littleforest.co.uk/crawler/images/jp%20flag.png"},
+            {country: "Korea", url: "http://lfi.littleforest.co.uk/crawler/images/kr%20flag.png"},
+            {country: "Malaysia", url: "http://lfi.littleforest.co.uk/crawler/images/my%20flag.png"},
+            {country: "Mexico", url: "http://lfi.littleforest.co.uk/crawler/images/mx%20flag.png"},
+            {country: "México", url: "http://lfi.littleforest.co.uk/crawler/images/mx%20flag.png"},
+            {country: "Amsterdam", url: "http://lfi.littleforest.co.uk/crawler/images/nl%20flag.png"},
+            {country: "Netherlands", url: "http://lfi.littleforest.co.uk/crawler/images/nl%20flag.png"},
+            {country: "NL", url: "http://lfi.littleforest.co.uk/crawler/images/nl%20flag.png"},
+            {country: "Canada", url: "http://lfi.littleforest.co.uk/crawler/images/ca%20flag.png"},
+            {country: "Turkey", url: "http://lfi.littleforest.co.uk/crawler/images/tr%20flag.png"},
+            {country: "Turkiye", url: "http://lfi.littleforest.co.uk/crawler/images/tr%20flag.png"},
+            {country: "Herndon", url: "http://lfi.littleforest.co.uk/crawler/images/us%20flag.png"},
+            {country: "America", url: "http://lfi.littleforest.co.uk/crawler/images/us%20flag.png"},
+            {country: "US", url: "http://lfi.littleforest.co.uk/crawler/images/us%20flag.png"}
         ];
 
         /*map.forEach(function(value, key) {
